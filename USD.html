@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<html lang="en">
+<title>Database Security</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="sidenav.css">
+<link rel="stylesheet" href="btn-group.css">
+<link rel="stylesheet" href="table.css">
+<!--topbar -->
+
+<body>
+
+<div class="topnav">
+
+
+  <a class="active" href="intro.html" >D A T A B A S E </a>
+  <a class="active" href="intro.html"> S E C U R I T Y</a>
+
+  <div class="topnav-right">
+  <a href="home.html">Home</a>
+  <a href="lesson.html">Lesson</a>
+  </div>
+
+</div>
+<!--sidebar-->
+<div class="tab">
+  <button class="tablinks" onclick="openContent(event, 'intro')" id="defaultOpen" ><a href="home.html">INTRODUCTION</button></a>
+  <button class="dropdown-btn">DATABASE THREAT<i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+
+    <a  href="malware.html" >Malware</a>
+    <a href="WeakAuditTrail.html">Weak Audit Trail</a>
+    <a href="SQL.html">SQL Injection</a>
+    <a href="DOS.html">Denial of Service</a>
+    <a href="WeakAut.html">Weak Authentication</a>
+    <a href="BDE.html">Backup Data Exposure</a>
+    <a href="Exces-Priv.html">Excessive Privileges</a>
+    <a href="USD.html">Unmanaged Sensitive Data </a>
+    <a href="DB-Vul.html">Database Vulnerabilities</a>
+    </div>
+
+  <button class="tablinks" onclick="openContent(event, 'controlmethod')">CONTROL METHOD</button>
+
+
+  </div>
+
+  <!--content-->
+  <div class="table">
+
+
+  <h2>Two Equal Columns</h2>
+
+<div class="row">
+ <div class="column" style="background-color:lightgrey;font-size:18px">
+   <h2 style="text-align:center">UNMANAGED SENSITIVE DATA </h2>
+ <p style="text-align:center; font-size:17px">Many companies store a lot of sensitive information and fail to keep an accurate inventory of it. Forgotten and unattended data may fall prey to hackers. In addition, new sensitive data is added on a daily basis and it’s not easy to keep track of it all. It means that newly added data may be exposed to threats.
+
+</p>
+ </div>
+ <br><br>
+ <div class="column" style="background-color:#bbb; ">
+   <h2 style="text-align:center">Countermeasure</h2>
+<p>
+<ul>Encrypt all sensitive data in your database(s).</ul>
+<ul>Apply required controls and permissions to the database.</ul>
+<ul>Run periodic search for new sensitive data on your databases. You can do this very effectively with the Periodic Data Discovery tool and Compliance Manager that will automatically discover newly added sensitive data and protect it.
+</ul></p>
+ </div>
+</div>
+  <!--js-->
+  <script>
+  function openContent(evt, contentName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(contentName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+
+
+  </script>
+
+
+  </body>
+  </html>

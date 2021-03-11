@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<html lang="en">
+<title>Database Security</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="sidenav.css">
+<link rel="stylesheet" href="btn-group.css">
+<link rel="stylesheet" href="table.css">
+<!--topbar -->
+
+<body>
+
+<div class="topnav">
+
+
+  <a class="active" href="intro.html" >D A T A B A S E </a>
+  <a class="active" href="intro.html"> S E C U R I T Y</a>
+
+  <div class="topnav-right">
+  <a href="home.html">Home</a>
+  <a href="lesson.html">Lesson</a>
+  </div>
+
+</div>
+<!--sidebar-->
+<div class="tab">
+  <button class="tablinks" onclick="openContent(event, 'intro')" id="defaultOpen" ><a href="home.html">INTRODUCTION</button></a>
+  <button class="dropdown-btn">DATABASE THREAT<i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+
+    <a  href="malware.html" >Malware</a>
+    <a href="WeakAuditTrail.html">Weak Audit Trail</a>
+    <a href="SQL.html">SQL Injection</a>
+    <a href="DOS.html">Denial of Service</a>
+    <a href="WeakAut.html">Weak Authentication</a>
+    <a href="BDE.html">Backup Data Exposure</a>
+    <a href="Exces-Priv.html">Excessive Privileges</a>
+    <a href="USD.html">Unmanaged Sensitive Data </a>
+    <a href="DB-Vul.html">Database Vulnerabilities</a>
+    </div>
+
+  <button class="tablinks" onclick="openContent(event, 'controlmethod')">CONTROL METHOD</button>
+
+
+  </div>
+
+  <!--content-->
+  <div class="table">
+
+
+  <h2>Two Equal Columns</h2>
+
+<div class="row">
+ <div class="column" style="background-color:lightgrey;font-size:18px">
+   <h2 style="text-align:center">DATABASE VULNARABILITIES AND MISCONFIGURATION</h2>
+ <p style="text-align:center; font-size:17px">It is common to find vulnerable and un-patched databases, or discover databases that still have default accounts and configuration parameters. Attackers know how to exploit these vulnerabilities to launch attacks against your organization. Unfortunately, organizations often struggle to stay on top of maintaining database configurations even when patches are available. Typical issues include high workloads and mounting backlogs for the associated database administrators, complex and time-consuming requirements for testing patches, and the challenge of finding a maintenance window to take down and work on what is often classified as a business-critical system. The net result is that it generally takes organizations months to patch databases, during which time they remain vulnerable.
+</p>
+ </div>
+ <br><br>
+ <div class="column" style="background-color:#bbb; ">
+   <h2 style="text-align:center">Countermeasure</h2>
+<p>No default accounts should be there. Accounts must be created using fresh username and password.
+</p>
+ </div>
+</div>
+  <!--js-->
+  <script>
+  function openContent(evt, contentName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(contentName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+
+
+  </script>
+
+
+  </body>
+  </html>

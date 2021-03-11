@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: center;
+  width: auto;
+  padding: 10px;
+  margin-left: 20%;
+  margin-right: 5%;
+  background-color: white;
+  opacity: 0.9;
+  border: 2px solid black;
+  border-radius: 14px;
+  font-size: 15px;
+}
+.column1 {
+  float: center;
+  width: auto;
+  padding: 10px;
+  height: 200px; /* Should be removed. Only for demonstration */
+  margin-left: 10%;
+  margin-right: 5%;
+  background-color: white;
+  opacity: 0.9;
+  border: 2px solid black;
+  border-radius: 14px;
+  font-size: 15px;
+  text-align: center;
+
+}
+
+/* Clear floats after the columns */
